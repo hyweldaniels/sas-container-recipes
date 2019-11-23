@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ settings.project_name }}-cas-worker
@@ -379,4 +379,8 @@ spec:
       - name: anchors
         configMap:
           name: {{ settings.project_name }}-cacerts-configmap
+	selector:
+	  matchLabels:
+	    app: {{ settings.project_name }}-cas-worker
+        domain: {{ settings.project_name }}
 ...
