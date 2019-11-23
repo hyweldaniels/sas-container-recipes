@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{ settings.project_name }}-{{ item.key }}
+  namespace: {{ SAS_K8S_NAMESPACE }}
 spec:
   serviceName: "{{ settings.project_name }}-{{ item.key }}"
   replicas: 1
