@@ -1,5 +1,5 @@
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ settings.project_name }}-esp-run-time
@@ -175,4 +175,8 @@ spec:
       - name: anchors
         configMap:
           name: {{ settings.project_name }}-cacerts-configmap
+  selector:
+    matchLabels:
+	  app: {{ settings.project_name }}-esp-run-time
+      domain: {{ settings.project_name }}
 ...
