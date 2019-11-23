@@ -379,8 +379,8 @@ spec:
       - name: anchors
         configMap:
           name: {{ settings.project_name }}-cacerts-configmap
-	selector:
-	  matchLabels:
-	    app: {{ settings.project_name }}-cas-worker
-        domain: {{ settings.project_name }}
+  selector:
+    matchLabels:
+      app: {{ settings.project_name }}-cas-worker
+      domain: {{ settings.project_name }}
 ...
